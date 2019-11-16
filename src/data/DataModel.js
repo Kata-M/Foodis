@@ -7,6 +7,7 @@ const DataModel = function () {
   let numberOfGuests = 4;
   let observers = [];
   let listOfFoodItems = [];
+ 
 
   var FoodItem = function(id,name, price, quantity,used,wasted,wastedPrecentage, times_bought) {
   this.id = id
@@ -48,20 +49,32 @@ const DataModel = function () {
     return listofShoppingCart;
   }
 
-  this.toggleUsed = function (tab){
+  this.deleteItem = function(id){
     var i;
-    for (i = 0; i < listOfFoodItems.length; i++) { 
-      if(listOfFoodItems[i].name === tab.name){
-        console.log("testiiing")
+    var j;
+    /*for (i = 0; i < listOfFoodItems.length; i++) { 
+      if(listOfFoodItems[i].id == id){
+        console.log("this item will be removed: ")
         console.log(listOfFoodItems[i].name)
-        console.log("tab")
-        console.log(tab)
-        listOfFoodItems[i].used = !listOfFoodItems[i].used
+        console.log(listOfFoodItems[i].id)
+        listOfFoodItems.splice(i,1)
       }
+    }*/
+    listOfFoodItems.splice(id,1)
+    this.updateFoodList()
+    for(j = 0; j < listOfFoodItems.length; j ++){
+        console.log(j + "  List of items :  " + listOfFoodItems[j].name)
     }
-
+    return listOfFoodItems;
   }
 
+  this.updateFoodList = function(){
+    var i; 
+    for (i = 0; i < listOfFoodItems.length; i++) { 
+      listOfFoodItems[i].id =i
+
+    }
+  }
 
   let sliderValue = 0;
 

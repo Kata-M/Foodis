@@ -34,20 +34,9 @@ class Overview extends Component {
       // menu :  ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
         // checked: [ false, false, false, false],
          list: this.props.model.getlistOfFoodItems()
-
     }
+    this.deleteItem = this.deleteItem.bind(this);
   }
-
-  handleCheckboxChange = event => {
-    this.setState({ checked: event.target.checked })
-    this.props.model.toggleUsed(event.target.checked)
-  }
-
-  handleCheckboxChange2(tab) {
-    this.props.model.toggleUsed(tab)
-    //this.props.model.toggleUsed(event.target.checked)
-  }
-
     // this methods is called by React lifecycle when the 
   // component is actually shown to the user (mounted to DOM)
   // that's a good place to setup model observer
@@ -73,6 +62,21 @@ class Overview extends Component {
     })
   }
 
+  deleteItem(id){
+    {console.log("Im in the delete")}
+    {console.log(id)}
+   //{this.props.model.deleteItem(id)}
+   {this.setState({list: this.props.model.deleteItem(id)})}
+   {console.log(this.state.list)}
+
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+  }
+
 
   render() {
      const rows = this.state.list.map((tab) =>
@@ -80,16 +84,15 @@ class Overview extends Component {
      <tr key={tab.id}>
         <td className="tableRows"  id={tab}> 
                 {tab.name}   
-                 <Checkbox
-                    checked={tab.used}
-                    onChange={this.handleCheckboxChange}
-                  /> 
-                
-                <h>
-                </h>
+
                 <Link to={"/DetailedView/" + tab.id}>
-                        <button>Wasted</button>
-                </Link>   
+                        <button class="wasted">Wasted</button>
+                </Link>          
+                <h>
+                </h> 
+                <button class="delete" type="submit" onClick={() => {this.deleteItem(tab.id)}}>
+                    Used
+                </button>     
         </td>
       </tr>
     )
@@ -98,7 +101,7 @@ class Overview extends Component {
           <Navbar bg="light" expand="lg">
               
 
-                <Nav.Link href="OverView">Overview</Nav.Link>
+                <Nav.Link href="">Overview</Nav.Link>
                 <Nav.Link href="ShoppingList">Shopping List</Nav.Link>
 
 
@@ -109,9 +112,9 @@ class Overview extends Component {
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
-                          <Typography>                          
+                          <h2>                          
                                  Recently bought items
-                          </Typography>  
+                          </h2>  
                         </td> 
                     </thead>
                     <tbody>
@@ -121,13 +124,10 @@ class Overview extends Component {
                     </tbody>
           </table>
           <div style={{ fontFamily: 'system-ui' }}>
-        <label>
-          <Checkbox
-            checked={this.state.checked}
-            onChange={this.handleCheckboxChange}
-          />
-          <span style={{ marginLeft: 8 }}>Label Text</span>
-        </label>
+
+        
+        
+
       </div>
 
 
