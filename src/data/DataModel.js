@@ -68,6 +68,10 @@ const DataModel = function () {
     return listOfFoodItems;
   }
 
+  function isPushNotificationSupported() {
+    return "serviceWorker" in navigator && "PushManager" in window;
+  }
+
   this.updateFoodList = function(){
     var i; 
     for (i = 0; i < listOfFoodItems.length; i++) { 
