@@ -68,7 +68,7 @@ class Overview extends Component {
    //{this.props.model.deleteItem(id)}
    {this.setState({list: this.props.model.deleteItem(id)})}
    {console.log(this.state.list)}
-   
+
   }
 
   handleClick() {
@@ -101,7 +101,7 @@ class Overview extends Component {
           <Navbar bg="light" expand="lg">
               
 
-                <Nav.Link href="OverView">Overview</Nav.Link>
+                <Nav.Link href="">Overview</Nav.Link>
                 <Nav.Link href="ShoppingList">Shopping List</Nav.Link>
 
 
