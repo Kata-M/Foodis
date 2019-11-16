@@ -24,7 +24,6 @@ class App extends Component {
           <Route exact path="/" render={() => <Overview model={modelInstance}/>}/>
           <Route path="/DetailedView" render={() => <DetailedView model={modelInstance}/>}/>
           <Route path="/ShoppingList" render={() => <ShoppingList model={modelInstance}/>}/>
-        
         </header>
       </div>
     );

@@ -1,0 +1,36 @@
+div.DetailedView h1 {
+    font-size: 30px;
+    color: black;
+    float: center;
+    margin: 15px;
+}
+
+div.DetailedView button {
+    float: center;
+    position: absolute;
+    top: 80%;
+}
+
+div.DetailedView {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+div.total_value {
+    font-size: 40px;
+    padding-left: 46%;
+}
+
+p.euro{
+    position: relative;
+    font-size: 29px;
+    top: 50%;
+    float: right;
+    background: red;
+}
+
+div.value {
+    margin-left: 5px;
+}
+
