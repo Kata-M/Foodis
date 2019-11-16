@@ -36,9 +36,6 @@ class DetailedView extends Component {
         let itemPrice = this.props.model.getItemPrice(this.state.itemId);
     return (
       <div className="DetailedView">
-          <Link to="/">
-              <button>Go back</button>
-          </Link>
           <h1> {itemName} </h1>
           <h2> How much did you waste? </h2>
             <Slider model={this.props.model} color="#ff6902"/>
@@ -48,6 +45,9 @@ class DetailedView extends Component {
                     {Math.round(itemPrice * this.state.sliderValue) / 100 + '\u20AC'}
                 </div>
             </div>
+          <Link to="/">
+              <button className="saveButton">Save</button>
+          </Link>
       </div>
     );
   }
