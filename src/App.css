@@ -1,0 +1,37 @@
+:root {
+    --color-surface: rgb(255, 255, 255);
+    --color-solid: rgb(32, 32, 32);
+    --color-primary:tomato;
+  }
+
+h1 { color: tomato; font-family: 'Raleway',sans-serif; font-size: 62px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase; }
+
+
+h2 { color: black; font-family: 'Raleway',sans-serif; font-size: 30px; font-weight: 800; line-height: 36px; margin: 0 0 24px; text-align: center; }
+    
+    
+p { color: black; font-family: 'Raleway',sans-serif; font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
+    
+    
+a { color: black; text-decoration: underline; }
+    
+    
+a:hover { color: #1c1c1c; text-decoration: underline; }
+
+html {
+    font-family: 'Raleway',sans-serif;
+    margin: 10px;
+    background: var(--color-surface);
+    color: var(--color-solid);
+    
+  }
+
+button {
+    background: var(--color-surface);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    padding: 4px 12px;
+    float: right;
+    font-size: 1.2rem;
+    border-radius: 4px;
+  }
