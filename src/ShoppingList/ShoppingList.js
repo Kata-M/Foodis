@@ -4,12 +4,14 @@ import Sidebar from '../Sidebar/Sidebar';
 import Checkbox from '../Components/Checkbox'
 import Row from 'react-bootstrap/Row'
 import Typography from '@material-ui/core/Typography';
+import {Link} from "react-router-dom";
+
+import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl } from 'react-bootstrap';
+
 
 class ShoppingList extends Component {
   constructor(props) {
     super(props)
-
-
     // we put on state the properties we want to use and modify in the component
     this.state = {
       // menu :  ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
@@ -18,17 +20,6 @@ class ShoppingList extends Component {
 
     }
   }
-
-  handleCheckboxChange = event => {
-    this.setState({ checked: event.target.checked })
-    this.props.model.toggleUsed(event.target.checked)
-  }
-
-  handleCheckboxChange2(tab) {
-    this.props.model.toggleUsed(tab)
-    //this.props.model.toggleUsed(event.target.checked)
-  }
-
     // this methods is called by React lifecycle when the 
   // component is actually shown to the user (mounted to DOM)
   // that's a good place to setup model observer
@@ -55,25 +46,20 @@ class ShoppingList extends Component {
   }  
   
   render() {
+
     const rows = this.state.list.map((tab) =>
     <tr key={tab.id}>
-        <td className="tableRows"  id={tab}> 
+        <td className="tableRows"  id={tab}>
                 {tab.name}   
-                 <Checkbox
-                    checked={tab.used}
-                    onChange={this.handleCheckboxChange}
-                  /> 
-                
                 <h>
                 </h>
         </td>
       </tr>
     )
-    
     return (
       <div className="DetailedView">
 
-          <table id="simple-board">
+          <table class="ostoslista">
                     <thead>       
                         <td className="tableCell">
                           <h1>                          
@@ -87,6 +73,9 @@ class ShoppingList extends Component {
 
                     </tbody>
           </table>
+          <Link to="/">
+              <button>Go back</button>
+          </Link>
           <div style={{ fontFamily: 'system-ui' }}>
         
       </div>

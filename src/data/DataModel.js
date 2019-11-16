@@ -7,6 +7,7 @@ const DataModel = function () {
   let numberOfGuests = 4;
   let observers = [];
   let listOfFoodItems = [];
+ 
 
   var FoodItem = function(id,name, price, quantity,used,wasted,wastedPrecentage, times_bought) {
   this.id = id
@@ -19,11 +20,11 @@ const DataModel = function () {
   this.times_bought = times_bought
   }
 
-  var testFood1 = new FoodItem(0,"Milk", 1.5, "1",true,false,0);
-  var testFood2 = new FoodItem(1,"Bread", 1.05, "1",false,false,0);
-  var testFood3 = new FoodItem(2,"Cucumber", .07, "3",true,false,0);
-  var testFood4 = new FoodItem(3,"Chocolate", 1.25, "2",false,false,0);
-  var testFood5 = new FoodItem(4,"Mango", 3.5, "100",false,false,0);
+  var testFood1 = new FoodItem(0,"Milk", 1.5, "1",true,false,0, 9);
+  var testFood2 = new FoodItem(1,"Bread", 1.05, "1",false,false,0, 4);
+  var testFood3 = new FoodItem(2,"Cucumber", .07, "3",true,false,0, 2);
+  var testFood4 = new FoodItem(3,"Chocolate", 1.25, "2",false,false,0, 1);
+  var testFood5 = new FoodItem(4,"Mango", 3.5, "100",false,false,0, 3);
 
   listOfFoodItems.push(testFood1);
   listOfFoodItems.push(testFood2);
@@ -48,20 +49,32 @@ const DataModel = function () {
     return listofShoppingCart;
   }
 
-  this.toggleUsed = function (tab){
+  this.deleteItem = function(id){
     var i;
-    for (i = 0; i < listOfFoodItems.length; i++) { 
-      if(listOfFoodItems[i].name == tab.name){
-        console.log("testiiing")
+    var j;
+    /*for (i = 0; i < listOfFoodItems.length; i++) { 
+      if(listOfFoodItems[i].id == id){
+        console.log("this item will be removed: ")
         console.log(listOfFoodItems[i].name)
-        console.log("tab")
-        console.log(tab)
-        listOfFoodItems[i].used = !listOfFoodItems[i].used
+        console.log(listOfFoodItems[i].id)
+        listOfFoodItems.splice(i,1)
       }
+    }*/
+    listOfFoodItems.splice(id,1)
+    this.updateFoodList()
+    for(j = 0; j < listOfFoodItems.length; j ++){
+        console.log(j + "  List of items :  " + listOfFoodItems[j].name)
     }
-
+    return listOfFoodItems;
   }
 
+  this.updateFoodList = function(){
+    var i; 
+    for (i = 0; i < listOfFoodItems.length; i++) { 
+      listOfFoodItems[i].id =i
+
+    }
+  }
 
   let sliderValue = 0;
 
