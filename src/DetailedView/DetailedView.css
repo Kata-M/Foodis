@@ -11,23 +11,26 @@ div.DetailedView button {
     top: 80%;
 }
 
+
+div.value {
+    position: absolute;
+    top: 8.5em;
+    left: 5.9em;
+}
+
 div.DetailedView {
     margin-top: 10%;
     display: flex;
     flex-direction: column;
 }
 
+div.total {
+    padding-top: 3em;
+}
+
 div.total_value {
     font-size: 40px;
     padding-left: 46%;
-}
-
-p.euro{
-    position: relative;
-    font-size: 29px;
-    top: 50%;
-    float: right;
-    background: red;
 }
 
 div.value {
