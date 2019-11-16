@@ -6,6 +6,9 @@ import Row from 'react-bootstrap/Row'
 import Typography from '@material-ui/core/Typography';
 import {Link} from "react-router-dom";
 
+import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl } from 'react-bootstrap';
+
+
 class ShoppingList extends Component {
   constructor(props) {
     super(props)
@@ -73,7 +76,10 @@ class ShoppingList extends Component {
     
     return (
       <div className="DetailedView">
-
+        <Navbar bg="light" expand="lg">
+              <Nav.Link href="/">Overview</Nav.Link>
+              <Nav.Link href="ShoppingList">Shopping List</Nav.Link>
+        </Navbar>
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
