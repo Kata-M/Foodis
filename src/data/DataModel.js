@@ -6,6 +6,44 @@ const DataModel = function () {
 
   let numberOfGuests = 4;
   let observers = [];
+  let listOfFoodItems = [];
+
+  var FoodItem = function(name, price, quantity,used,wasted,wastedPrecentage) {
+  this.name = name
+  this.price = price
+  this.quantity = quantity
+  this.used = used
+  this.wasted = wasted
+  this.wastedPrecentage = wastedPrecentage
+  }
+  var testFood1 = new FoodItem("Milk", 1.5, "1",true,false,0); 
+  var testFood2 = new FoodItem("Bread", 1.05, "1",false,false,0);
+  var testFood3 = new FoodItem("Cucumber", .07, "3",true,false,0);
+  var testFood4 = new FoodItem("Chocolate", 1.25, "2",false,false,0);
+  var testFood5 = new FoodItem("Mango", 3.5, "100",false,false,0);
+  listOfFoodItems.push(testFood1);
+  listOfFoodItems.push(testFood2);
+  listOfFoodItems.push(testFood3);
+  listOfFoodItems.push(testFood4);
+  listOfFoodItems.push(testFood5);
+
+  this.getlistOfFoodItems = function () {
+    console.log(listOfFoodItems)
+    return listOfFoodItems;
+  };
+
+  this.toggleUsed = function (tab){
+    var i;
+    for (i = 0; i < listOfFoodItems.length; i++) { 
+      if(listOfFoodItems[i].name == tab.name){
+        console.log("testiiing")
+        console.log(listOfFoodItems[i].name)
+        listOfFoodItems[i].used = !listOfFoodItems[i].used
+      }
+    }
+
+  }
+
 
   this.setNumberOfGuests = function (num) {
     numberOfGuests = num;
