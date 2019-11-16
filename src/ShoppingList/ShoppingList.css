@@ -5,3 +5,39 @@ h2 {
 h3 {
     font-size: 19px;
 }
+
+table.ostoslista {
+    margin-left: 10%;
+    font-family: Arial;
+    float: center;
+    font-size: 30px;
+  }
+
+thead {
+    text-align: center;
+}
+
+button.ostettu {
+    float: right;
+    border-radius: 4px;
+    background-color: var(--color-primary);
+    color: cyan;
+    padding: 5px 20px;
+    margin: 10px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+td {
+    padding: 5px 10px;
+}
+
+p {
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+  
