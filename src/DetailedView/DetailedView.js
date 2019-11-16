@@ -45,7 +45,7 @@ class DetailedView extends Component {
             <div className="total">
                 <p> You have thrown away: </p>
                 <div className="total_value">
-                    {itemPrice * this.state.sliderValue / 100 + '\u20AC'}
+                    {Math.round(itemPrice * this.state.sliderValue) / 100 + '\u20AC'}
                 </div>
             </div>
       </div>
