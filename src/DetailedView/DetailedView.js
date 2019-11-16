@@ -31,27 +31,15 @@ class DetailedView extends Component {
             sliderValue: this.props.model.getSliderValue()
         })
     }
-
+    
   render() {
-
     return (
       <div className="DetailedView">
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-        <h2>This is the Detailed View :D</h2>
-        
-        {/* We pass the model as property to the Sidebar component */}
-        <Sidebar model={this.props.model}/>
-
-=======
-=======
->>>>>>> 6382d061d014e07571e1b952185c89ef614adb13
           <Link to="/">
               <button>Go back</button>
           </Link>
           <h1> Item Name </h1>
           <h2> How much did you waste? </h2>
-<<<<<<< HEAD
             {/*<Sidebar model={this.props.model}/>*/}
             <Slider model={this.props.model} color="#ff6902"/>
           {/*<div>{this.props.model.getSliderValue()} </div>*/}
@@ -61,13 +49,6 @@ class DetailedView extends Component {
                     {this.state.sliderValue}
                 </div>
             </div>
->>>>>>> Stashed changes
-=======
-        {/*<Sidebar model={this.props.model}/>*/}
-        <Slider model={this.props.model} color="#ff6902"/>
-          {/*<div>{this.props.model.getSliderValue()} </div>*/}
-          <div> {this.state.sliderValue}</div>
->>>>>>> 6382d061d014e07571e1b952185c89ef614adb13
       </div>
     );
   }
