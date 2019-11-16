@@ -1,0 +1,52 @@
+:root {
+    --color-surface: rgb(255, 255, 255);
+    --color-solid: rgb(5, 5, 5);
+    --color-primary:rgb(223, 133, 30);
+  }
+
+div {
+    background: var(--color-surface);
+}
+
+nav {
+    margin: 0;
+}
+
+
+
+h1 { color: var(--color-primary); font-family: 'Raleway',sans-serif; font-size: 62px; text-align: center; padding-bottom: 10px;}
+
+
+h2 { color: black; font-family: 'Raleway',sans-serif; font-size: 30px; text-align: center; }
+    
+    
+p { color: black; font-family: 'Raleway',sans-serif; font-size: 18px;}
+    
+    
+a { color: black; text-decoration: underline; }
+    
+    
+a:hover { color: #1c1c1c; text-decoration: underline; }
+
+html {
+    font-family: 'Raleway',sans-serif;
+    margin: 10px;
+    background: var(--color-surface);
+    color: var(--color-solid);
+    
+  }
+
+button {
+
+    padding: 4px 12px;
+    float: right;
+    border-radius: 4px;
+    background-color: var(--color-primary); /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
