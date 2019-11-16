@@ -56,15 +56,11 @@ class ShoppingList extends Component {
   }  
   
   render() {
+
     const rows = this.state.list.map((tab) =>
     <tr key={tab.id}>
-        <td className="tableRows"  id={tab}> 
+        <td className="tableRows"  id={tab}>
                 {tab.name}   
-                 <Checkbox
-                    checked={tab.used}
-                    onChange={this.handleCheckboxChange}
-                  /> 
-                
                 <h>
                 </h>
         </td>
@@ -74,7 +70,7 @@ class ShoppingList extends Component {
     return (
       <div className="DetailedView">
 
-          <table id="simple-board">
+          <table class="ostoslista">
                     <thead>       
                         <td className="tableCell">
                           <h1>                          
