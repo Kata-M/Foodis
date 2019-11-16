@@ -29,13 +29,20 @@ class Overview extends Component {
     // we put on state the properties we want to use and modify in the component
     this.state = {
       // menu :  ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
-         menu :  [ "Milk", "Bread", "Sugar", "Cucumber"],
-         checked: [ false, false, false, false]
+        // checked: [ false, false, false, false],
+         list: this.props.model.getlistOfFoodItems()
+
     }
   }
 
   handleCheckboxChange = event => {
     this.setState({ checked: event.target.checked })
+    this.props.model.toggleUsed(event.target.checked)
+  }
+
+  handleCheckboxChange2(tab) {
+    this.props.model.toggleUsed(tab)
+    //this.props.model.toggleUsed(event.target.checked)
   }
 
     // this methods is called by React lifecycle when the 
@@ -44,7 +51,7 @@ class Overview extends Component {
   componentDidMount() {
     this.state =  { 
       // menu : ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
-      menu :  [ "Programming", "Prototyping & Design", "Art", "CV"]
+      list: this.props.model.getlistOfFoodItems()
     }
   }
 
@@ -59,24 +66,27 @@ class Overview extends Component {
   // cause the component to re-render
   update() {
     this.setState({
-      menu : ["My Story", "Programming", "Prototyping & Design","Art", "CV"]
+      list: this.props.model.getlistOfFoodItems()
     })
   }
 
 
   render() {
-     const rows = this.state.menu.map((tab) =>
+     const rows = this.state.list.map((tab) =>
    
-     <tr>
-        <td className="tableRows" id={tab}> 
-                {tab}   
+     <tr key={tab.id}>
+        <td className="tableRows"  id={tab}> 
+                {tab.name}   
                  <Checkbox
-                    checked={this.state.checked}
+                    checked={tab.used}
                     onChange={this.handleCheckboxChange}
                   /> 
+                
+                <h>
+                </h>
                 <Link to="/DetailedView">
-                        <button>DetailedView</button>
-                </Link>      
+                        <button>Wasted</button>
+                </Link>   
         </td>
       </tr>
     )
