@@ -21,7 +21,7 @@ class App extends Component {
           <h1 className="App-title">{this.state.title}</h1>
           
           {/* We rended diffrent component based on the path */}
-          <Route exact path="/" component={Overview}/>
+          <Route exact path="/" render={() => <Overview model={modelInstance}/>}/>
           <Route path="/DetailedView" render={() => <DetailedView model={modelInstance}/>}/>
           <Route path="/ShoppingList" render={() => <ShoppingList model={modelInstance}/>}/>
         
