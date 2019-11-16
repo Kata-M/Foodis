@@ -2,7 +2,7 @@ const httpOptions = {
   headers: {'X-Mashape-Key': 'YOUR_API_KEY'}
 };
 
-const DinnerModel = function () {
+const DataModel = function () {
 
   let numberOfGuests = 4;
   let observers = [];
@@ -59,4 +59,4 @@ const DinnerModel = function () {
   };
 };
 
-export const modelInstance = new DinnerModel();
+export const modelInstance = new DataModel();
