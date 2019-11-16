@@ -12,8 +12,6 @@ import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem, Form, FormControl 
 class ShoppingList extends Component {
   constructor(props) {
     super(props)
-
-
     // we put on state the properties we want to use and modify in the component
     this.state = {
       // menu :  ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
@@ -22,17 +20,6 @@ class ShoppingList extends Component {
 
     }
   }
-
-  handleCheckboxChange = event => {
-    this.setState({ checked: event.target.checked })
-    this.props.model.toggleUsed(event.target.checked)
-  }
-
-  handleCheckboxChange2(tab) {
-    this.props.model.toggleUsed(tab)
-    //this.props.model.toggleUsed(event.target.checked)
-  }
-
     // this methods is called by React lifecycle when the 
   // component is actually shown to the user (mounted to DOM)
   // that's a good place to setup model observer
@@ -60,20 +47,21 @@ class ShoppingList extends Component {
   
   render() {
     const rows = this.state.list.map((tab) =>
-    <tr key={tab.id}>
-        <td className="tableRows"  id={tab}> 
-                {tab.name}   
-                 <Checkbox
-                    checked={tab.used}
-                    onChange={this.handleCheckboxChange}
-                  /> 
-                
-                <h>
-                </h>
-        </td>
-      </tr>
+        <tr key={tab.id}>
+            <td className="tableRows"  id={tab}> 
+                    {tab.name}   
+
+                    <button type="submit" onClick={() => {this.deleteItem(tab.id)}}>
+                        Used
+                    </button>          
+                    <h>
+                    </h>
+                    <Link to={"/DetailedView/" + tab.id}>
+                            <button>Wasted</button>
+                    </Link>   
+            </td>
+          </tr>
     )
-    
     return (
       <div className="DetailedView">
         <Navbar bg="light" expand="lg">
