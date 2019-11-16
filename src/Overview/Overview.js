@@ -80,20 +80,21 @@ class Overview extends Component {
 
   render() {
      const rows = this.state.list.map((tab) =>
-        <tr key={tab.id}>
-            <td className="tableRows"  id={tab}> 
-                    {tab.name}   
+   
+     <tr key={tab.id}>
+        <td className="tableRows"  id={tab}> 
+                {tab.name}   
 
-                    <button type="submit" onClick={() => {this.deleteItem(tab.id)}}>
-                        Used
-                    </button>          
-                    <h>
-                    </h>
-                    <Link to={"/DetailedView/" + tab.id}>
-                            <button>Wasted</button>
-                    </Link>   
-            </td>
-          </tr>
+                <Link to={"/DetailedView/" + tab.id}>
+                        <button class="wasted">Wasted</button>
+                </Link>          
+                <h>
+                </h> 
+                <button class="delete" type="submit" onClick={() => {this.deleteItem(tab.id)}}>
+                    Used
+                </button>     
+        </td>
+      </tr>
     )
     return (
       <div className="Overview">
@@ -104,9 +105,9 @@ class Overview extends Component {
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
-                          <Typography>                          
+                          <h2>                          
                                  Recently bought items
-                          </Typography>  
+                          </h2>  
                         </td> 
                     </thead>
                     <tbody>

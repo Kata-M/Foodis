@@ -46,29 +46,20 @@ class ShoppingList extends Component {
   }  
   
   render() {
-    const rows = this.state.list.map((tab) =>
-        <tr key={tab.id}>
-            <td className="tableRows"  id={tab}> 
-                    {tab.name}   
 
-                    <button type="submit" onClick={() => {this.deleteItem(tab.id)}}>
-                        Used
-                    </button>          
-                    <h>
-                    </h>
-                    <Link to={"/DetailedView/" + tab.id}>
-                            <button>Wasted</button>
-                    </Link>   
-            </td>
-          </tr>
+    const rows = this.state.list.map((tab) =>
+    <tr key={tab.id}>
+        <td className="tableRows"  id={tab}>
+                {tab.name}   
+                <h>
+                </h>
+        </td>
+      </tr>
     )
     return (
       <div className="DetailedView">
-        <Navbar bg="light" expand="lg">
-              <Nav.Link href="/">Overview</Nav.Link>
-              <Nav.Link href="ShoppingList">Shopping List</Nav.Link>
-        </Navbar>
-          <table id="simple-board">
+
+          <table class="ostoslista">
                     <thead>       
                         <td className="tableCell">
                           <h1>                          
