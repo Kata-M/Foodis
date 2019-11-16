@@ -58,6 +58,10 @@ class ShoppingList extends Component {
     )
     return (
       <div className="DetailedView">
+        <Navbar bg="light" expand="lg">
+                <Nav.Link href="/">Overview</Nav.Link>
+                <Nav.Link href="ShoppingList">Shopping List</Nav.Link>
+          </Navbar>
 
           <table class="ostoslista">
                     <thead>       
