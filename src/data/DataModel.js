@@ -7,6 +7,18 @@ const DataModel = function () {
   let numberOfGuests = 4;
   let observers = [];
 
+  let sliderValue = 0;
+
+  this.setSliderValue = function (value) {
+    sliderValue = value;
+    notifyObservers();
+  };
+
+  this.getSliderValue = function () {
+    console.log("in model " + sliderValue);
+    return sliderValue;
+  };
+
   this.setNumberOfGuests = function (num) {
     numberOfGuests = num;
     notifyObservers();
