@@ -1,7 +1,22 @@
-tbody {
+table {
+    margin-left: 10%;
     font-family: Arial;
-    text-align: left;
+    float: center;
+    width: 80%;
   }
+
+thead {
+    text-align: center;
+}
+
+td {
+    padding: 3px 10px;
+}
+
+p {
+    text-align: center;
+    padding-top: 5px;
+}
 
 
   
