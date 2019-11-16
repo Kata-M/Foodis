@@ -4,6 +4,7 @@ import Sidebar from '../Sidebar/Sidebar';
 import Checkbox from '../Components/Checkbox'
 import Row from 'react-bootstrap/Row'
 import Typography from '@material-ui/core/Typography';
+import {Link} from "react-router-dom";
 
 class ShoppingList extends Component {
   constructor(props) {
@@ -87,6 +88,9 @@ class ShoppingList extends Component {
 
                     </tbody>
           </table>
+          <Link to="/">
+              <button>Go back</button>
+          </Link>
           <div style={{ fontFamily: 'system-ui' }}>
         
       </div>
