@@ -17,6 +17,7 @@ import Grid from '@material-ui/core/Grid';
 //import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Checkbox from '../Components/Checkbox'
+import  CheckBox  from '../Components/CheckBox2';
 
 //import { StickyContainer, Sticky } from 'react-sticky';
 
@@ -31,20 +32,9 @@ class Overview extends Component {
       // menu :  ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
         // checked: [ false, false, false, false],
          list: this.props.model.getlistOfFoodItems()
-
     }
+    this.deleteItem = this.deleteItem.bind(this);
   }
-
-  handleCheckboxChange = event => {
-    this.setState({ checked: event.target.checked })
-    this.props.model.toggleUsed(event.target.checked)
-  }
-
-  handleCheckboxChange2(tab) {
-    this.props.model.toggleUsed(tab)
-    //this.props.model.toggleUsed(event.target.checked)
-  }
-
     // this methods is called by React lifecycle when the 
   // component is actually shown to the user (mounted to DOM)
   // that's a good place to setup model observer
@@ -70,6 +60,19 @@ class Overview extends Component {
     })
   }
 
+  deleteItem(id){
+    {console.log("Im in the delete")}
+    {console.log(id)}
+   {this.props.model.deleteItem(id)}
+   {this.setState({list: this.props.model.deleteItem(id)})}
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+  }
+
 
   render() {
      const rows = this.state.list.map((tab) =>
@@ -77,13 +80,10 @@ class Overview extends Component {
      <tr key={tab.id}>
         <td className="tableRows"  id={tab}> 
                 {tab.name}   
-                 <Checkbox
-                    checked={tab.used}
-                    onChange={this.handleCheckboxChange}
-                  /> 
-                
-                <h>
-                </h>
+
+                <button type="submit" onClick={() => {this.deleteItem(tab.id)}}>
+                    Used
+                </button>
                 <Link to="/DetailedView">
                         <button>Wasted</button>
                 </Link>   
@@ -118,13 +118,10 @@ class Overview extends Component {
                     </tbody>
           </table>
           <div style={{ fontFamily: 'system-ui' }}>
-        <label>
-          <Checkbox
-            checked={this.state.checked}
-            onChange={this.handleCheckboxChange}
-          />
-          <span style={{ marginLeft: 8 }}>Label Text</span>
-        </label>
+
+        
+        
+
       </div>
 
 

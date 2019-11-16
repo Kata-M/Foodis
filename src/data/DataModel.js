@@ -7,6 +7,7 @@ const DataModel = function () {
   let numberOfGuests = 4;
   let observers = [];
   let listOfFoodItems = [];
+ 
 
   var FoodItem = function(id,name, price, quantity,used,wasted,wastedPrecentage) {
   this.id = id
@@ -47,6 +48,18 @@ const DataModel = function () {
 
   }
 
+  this.deleteItem = function(id){
+    var i;
+    for (i = 0; i < listOfFoodItems.length; i++) { 
+      if(listOfFoodItems[i].id == id){
+        console.log("this item will be removed: ")
+        console.log(listOfFoodItems[i].name)
+        console.log(listOfFoodItems[i].id)
+        listOfFoodItems.splice(i,1)
+      }
+    }
+    return listOfFoodItems;
+  }
 
   let sliderValue = 0;
 
