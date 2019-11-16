@@ -43,9 +43,9 @@ class DetailedView extends Component {
             {/*<Sidebar model={this.props.model}/>*/}
             <Slider model={this.props.model} color="#ff6902"/>
           {/*<div>{this.props.model.getSliderValue()} </div>*/}
-            <div class="total"> 
+            <div className="total">
                 <p> You have thrown away euros worth of: </p>
-                <div class="total_value">   
+                <div className="total_value">
                     {this.state.sliderValue}
                 </div>
             </div>

@@ -15,7 +15,6 @@ const DataModel = function () {
   };
 
   this.getSliderValue = function () {
-    console.log("in model " + sliderValue);
     return sliderValue;
   };
 
