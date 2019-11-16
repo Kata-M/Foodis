@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './DetailedView.css';
 import {Link} from "react-router-dom";
-import Slider from "../DiscreteSlider/Slider";
+import Slider from "../Slider/Slider";
 
 
 class DetailedView extends Component {
@@ -43,9 +43,9 @@ class DetailedView extends Component {
           <h2> How much did you waste? </h2>
             <Slider model={this.props.model} color="#ff6902"/>
             <div className="total">
-                <p> You have thrown away euros worth of: </p>
+                <p> You have thrown away: </p>
                 <div className="total_value">
-                    {itemPrice * this.state.sliderValue / 100}
+                    {itemPrice * this.state.sliderValue / 100 + '\u20AC'}
                 </div>
             </div>
       </div>
