@@ -16,6 +16,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 //import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
+import Checkbox from '../Components/Checkbox'
 
 //import { StickyContainer, Sticky } from 'react-sticky';
 
@@ -24,11 +25,17 @@ class Overview extends Component {
   constructor(props) {
     super(props)
 
+
     // we put on state the properties we want to use and modify in the component
     this.state = {
       // menu :  ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
-         menu :  [ "Milk", "Bread", "Sugar", "Cucumber"]
+         menu :  [ "Milk", "Bread", "Sugar", "Cucumber"],
+         checked: [ false, false, false, false]
     }
+  }
+
+  handleCheckboxChange = event => {
+    this.setState({ checked: event.target.checked })
   }
 
     // this methods is called by React lifecycle when the 
@@ -62,7 +69,11 @@ class Overview extends Component {
    
      <tr>
         <td className="tableRows" id={tab}> 
-                {tab}    
+                {tab}   
+                 <Checkbox
+                    checked={this.state.checked}
+                    onChange={this.handleCheckboxChange}
+                  /> 
                 <Link to="/DetailedView">
                         <button>DetailedView</button>
                 </Link>      
@@ -80,17 +91,13 @@ class Overview extends Component {
 
           
           </Navbar>
-          <p>
-              Welcome to the dinner planner React Startup code!
-          </p>
+
 
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
-                          <Typography>
-                            
-                                  Recently bought items
-                        
+                          <Typography>                          
+                                 Recently bought items
                           </Typography>  
                         </td> 
                     </thead>
@@ -100,6 +107,15 @@ class Overview extends Component {
 
                     </tbody>
           </table>
+          <div style={{ fontFamily: 'system-ui' }}>
+        <label>
+          <Checkbox
+            checked={this.state.checked}
+            onChange={this.handleCheckboxChange}
+          />
+          <span style={{ marginLeft: 8 }}>Label Text</span>
+        </label>
+      </div>
 
 
       </div>
