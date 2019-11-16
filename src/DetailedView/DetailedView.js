@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './DetailedView.css';
-import Sidebar from '../Sidebar/Sidebar';
 import {Link} from "react-router-dom";
 import Slider from "../DiscreteSlider/Slider";
 
@@ -12,7 +11,8 @@ class DetailedView extends Component {
 
         // we put on state the properties we want to use and modify in the component
         this.state = {
-            sliderValue: this.props.model.getSliderValue()
+            sliderValue: this.props.model.getSliderValue(),
+            itemId: this.props.match.params.id
         }
     }
 
@@ -20,8 +20,6 @@ class DetailedView extends Component {
         this.props.model.addObserver(this)
     }
 
-    // this is called when component is removed from the DOM
-    // good place to remove observer
     componentWillUnmount() {
         this.props.model.removeObserver(this)
     }
@@ -33,20 +31,21 @@ class DetailedView extends Component {
     }
     
   render() {
+
+        let itemName = this.props.model.getItemName(this.state.itemId);
+        let itemPrice = this.props.model.getItemPrice(this.state.itemId);
     return (
       <div className="DetailedView">
           <Link to="/">
               <button>Go back</button>
           </Link>
-          <h1> Item Name </h1>
+          <h1> {itemName} </h1>
           <h2> How much did you waste? </h2>
-            {/*<Sidebar model={this.props.model}/>*/}
             <Slider model={this.props.model} color="#ff6902"/>
-          {/*<div>{this.props.model.getSliderValue()} </div>*/}
-            <div class="total"> 
+            <div className="total">
                 <p> You have thrown away euros worth of: </p>
-                <div class="total_value">   
-                    {this.state.sliderValue}
+                <div className="total_value">
+                    {itemPrice * this.state.sliderValue / 100}
                 </div>
             </div>
       </div>

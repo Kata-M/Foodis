@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Overview.css';
-import { Link } from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css' ;
 import Col from 'react-bootstrap/Col'
@@ -17,6 +17,9 @@ import Grid from '@material-ui/core/Grid';
 //import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import Checkbox from '../Components/Checkbox'
+import DetailedView from "../DetailedView/DetailedView";
+import {modelInstance} from "../data/DataModel";
+import ShoppingList from "../ShoppingList/ShoppingList";
 
 //import { StickyContainer, Sticky } from 'react-sticky';
 
@@ -84,7 +87,7 @@ class Overview extends Component {
                 
                 <h>
                 </h>
-                <Link to="/DetailedView">
+                <Link to={"/DetailedView/" + tab.id}>
                         <button>Wasted</button>
                 </Link>   
         </td>
