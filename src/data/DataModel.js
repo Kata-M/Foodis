@@ -20,11 +20,11 @@ const DataModel = function () {
   this.times_bought = times_bought
   }
 
-  var testFood1 = new FoodItem(0,"Milk", 1.5, "1",true,false,0);
-  var testFood2 = new FoodItem(1,"Bread", 1.05, "1",false,false,0);
-  var testFood3 = new FoodItem(2,"Cucumber", .07, "3",true,false,0);
-  var testFood4 = new FoodItem(3,"Chocolate", 1.25, "2",false,false,0);
-  var testFood5 = new FoodItem(4,"Mango", 3.5, "100",false,false,0);
+  var testFood1 = new FoodItem(0,"Milk", 1.5, "1",true,false,0, 9);
+  var testFood2 = new FoodItem(1,"Bread", 1.05, "1",false,false,0, 4);
+  var testFood3 = new FoodItem(2,"Cucumber", .07, "3",true,false,0, 2);
+  var testFood4 = new FoodItem(3,"Chocolate", 1.25, "2",false,false,0, 1);
+  var testFood5 = new FoodItem(4,"Mango", 3.5, "100",false,false,0, 3);
 
   listOfFoodItems.push(testFood1);
   listOfFoodItems.push(testFood2);
