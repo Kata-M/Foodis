@@ -51,9 +51,10 @@ class ShoppingList extends Component {
     <tr key={tab.id}>
         <td className="tableRows"  id={tab}>
                 {tab.name}   
-                <h>
-                </h>
         </td>
+        <td className="tableRows"  id={tab}> {tab.quantity}</td>
+        <td className="tableRows"  id={tab}> {tab.price*tab.quantity} €</td>
+        
       </tr>
     )
     return (
@@ -68,11 +69,24 @@ class ShoppingList extends Component {
                         <td className="tableCell">
                           <h1>                          
                                  Shopping List
-                          </h1>  
+                          </h1> 
                         </td> 
+                       
                     </thead>
                     <tbody>
+                    <tr key={1.0}>
                       <hr/>
+                    </tr>
+                   
+                      <tr key={1.0}>
+                        <td>
+                          <p>Amount </p> 
+                          </td>
+                          <td>
+                          <p>Price </p> 
+                          </td>
+                      </tr>
+                        
                         {rows}
 
                     </tbody>
