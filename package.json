@@ -6,6 +6,8 @@
     "@material-ui/core": "^4.6.1",
     "ajv": "^6.10.2",
     "navbar": "^2.1.0",
+    "@material/slider": "^4.0.0",
+    "material-ui": "^0.20.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
@@ -17,5 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "@material-ui/core": "^4.6.1",
+    "@material-ui/icons": "^4.5.1"
   }
 }
