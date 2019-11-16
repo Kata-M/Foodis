@@ -17,11 +17,11 @@ const DataModel = function () {
   this.wasted = wasted
   this.wastedPrecentage = wastedPrecentage
   }
-  var testFood1 = new FoodItem(1,"Milk", 1.5, "1",true,false,0); 
-  var testFood2 = new FoodItem(2,"Bread", 1.05, "1",false,false,0);
-  var testFood3 = new FoodItem(3,"Cucumber", .07, "3",true,false,0);
-  var testFood4 = new FoodItem(4,"Chocolate", 1.25, "2",false,false,0);
-  var testFood5 = new FoodItem(5,"Mango", 3.5, "100",false,false,0);
+  var testFood1 = new FoodItem(0,"Milk", 1.5, "1",true,false,0);
+  var testFood2 = new FoodItem(1,"Bread", 1.05, "1",false,false,0);
+  var testFood3 = new FoodItem(2,"Cucumber", .07, "3",true,false,0);
+  var testFood4 = new FoodItem(3,"Chocolate", 1.25, "2",false,false,0);
+  var testFood5 = new FoodItem(4,"Mango", 3.5, "100",false,false,0);
   listOfFoodItems.push(testFood1);
   listOfFoodItems.push(testFood2);
   listOfFoodItems.push(testFood3);
@@ -58,6 +58,14 @@ const DataModel = function () {
   this.getSliderValue = function () {
     return sliderValue;
   };
+
+  this.getItemName = function(id) {
+    return listOfFoodItems[id].name;
+  }
+
+  this.getItemPrice = function(id) {
+    return listOfFoodItems[id].price;
+  }
 
   this.setNumberOfGuests = function (num) {
     numberOfGuests = num;

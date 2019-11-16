@@ -22,7 +22,7 @@ class App extends Component {
           
           {/* We rended diffrent component based on the path */}
           <Route exact path="/" render={() => <Overview model={modelInstance}/>}/>
-          <Route path="/DetailedView" render={() => <DetailedView model={modelInstance}/>}/>
+          <Route path="/DetailedView/:id" render={(props) => <DetailedView {...props} model={modelInstance}/>}/>
           <Route path="/ShoppingList" render={() => <ShoppingList model={modelInstance}/>}/>
         </header>
       </div>
