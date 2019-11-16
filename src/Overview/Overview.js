@@ -85,14 +85,14 @@ class Overview extends Component {
         <td className="tableRows"  id={tab}> 
                 {tab.name}   
 
-                <button type="submit" onClick={() => {this.deleteItem(tab.id)}}>
-                    Used
-                </button>          
-                <h>
-                </h>
                 <Link to={"/DetailedView/" + tab.id}>
-                        <button>Wasted</button>
-                </Link>   
+                        <button class="wasted">Wasted</button>
+                </Link>          
+                <h>
+                </h> 
+                <button class="delete" type="submit" onClick={() => {this.deleteItem(tab.id)}}>
+                    Used
+                </button>     
         </td>
       </tr>
     )
@@ -112,9 +112,9 @@ class Overview extends Component {
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
-                          <Typography>                          
+                          <h2>                          
                                  Recently bought items
-                          </Typography>  
+                          </h2>  
                         </td> 
                     </thead>
                     <tbody>
