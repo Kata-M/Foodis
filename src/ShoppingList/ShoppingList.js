@@ -71,12 +71,12 @@ class ShoppingList extends Component {
                     <tr key={1.0}>
                     </tr>
                    
-                      <tr key={1.0}>
+                      <tr id="p" key={1.0}>
                         <td>
-                          <p>Amount </p> 
+                          <p id="amount">Amount </p> 
                           </td>
                           <td>
-                          <p class="price">Price </p> 
+                          <p id="price">Price </p> 
                           </td>
                       </tr>
                         
