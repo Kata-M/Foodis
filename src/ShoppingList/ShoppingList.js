@@ -26,7 +26,7 @@ class ShoppingList extends Component {
   componentDidMount() {
     this.state =  { 
       // menu : ["My Story", "Programming", "Prototyping & Design", "Art", "CV"]
-      list: this.props.model.getlistOfFoodItems()
+      list: this.props.model.getShoppingList()
     }
   }
 
@@ -41,7 +41,7 @@ class ShoppingList extends Component {
   // cause the component to re-render
   update() {
     this.setState({
-      list: this.props.model.getlistOfFoodItems()
+      list: this.props.model.getShoppingList()
     })
   }  
   
