@@ -107,10 +107,11 @@ class Overview extends Component {
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
-							<h1> {totalWastedMoney + '\u20AC'}</h1>
-                          <h2>                          
+                          <h4>Money wasted:</h4>
+							<h1 id="saldo"> - {totalWastedMoney + '\u20AC'}</h1>
+                          <h5>                       
                                  Recently bought items
-                          </h2>  
+                          </h5>  
                         </td> 
                     </thead>
                     <tbody>
