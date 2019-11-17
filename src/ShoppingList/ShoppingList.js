@@ -63,19 +63,12 @@ class ShoppingList extends Component {
                 <Nav.Link href="/">Overview</Nav.Link>
                 <Nav.Link href="ShoppingList">Shopping List</Nav.Link>
           </Navbar>
-
-          <table class="ostoslista">
-                    <thead>       
-                        <td className="tableCell">
-                          <h1>                          
-                                 Shopping List
-                          </h1> 
-                        </td> 
-                       
-                    </thead>
+          
+          <h2 class="ostoslista">Shopping List</h2> 
+          <hr/>
+          <table id="simple-board">
                     <tbody>
                     <tr key={1.0}>
-                      <hr/>
                     </tr>
                    
                       <tr key={1.0}>
@@ -83,7 +76,7 @@ class ShoppingList extends Component {
                           <p>Amount </p> 
                           </td>
                           <td>
-                          <p>Price </p> 
+                          <p class="price">Price </p> 
                           </td>
                       </tr>
                         
@@ -91,9 +84,6 @@ class ShoppingList extends Component {
 
                     </tbody>
           </table>
-          <Link to="/">
-              <button>Go back</button>
-          </Link>
           <div style={{ fontFamily: 'system-ui' }}>
         
       </div>

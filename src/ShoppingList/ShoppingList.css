@@ -1,32 +1,21 @@
-h2 {
-    font-size: 20px;
+h2.ostoslista {
+    padding-top: 50px;
+    font-size: 32px;
+    
 }
 
-h3 {
-    font-size: 19px;
-}
-
-table.ostoslista {
-    margin-left: 10%;
-    font-family: Arial;
-    float: center;
-    font-size: 30px;
-  }
 
 thead {
     text-align: center;
 }
 
-button.ostettu {
-    border-radius: 4px;
-    background-color: var(--color-primary);
-    color: cyan;
-    padding: 5px 20px;
-    margin: 10px 2px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+table#simple-board p {
+    float: right;
+    margin-left: 40px;
+}
+
+p#price {
+    width: 50px;
 }
 
 td {
