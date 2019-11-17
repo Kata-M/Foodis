@@ -66,7 +66,7 @@ class Overview extends Component {
     {console.log("Im in the delete")}
     {console.log(id)}
    //{this.props.model.deleteItem(id)}
-   {this.setState({list: this.props.model.deleteItem(id)})}
+   {this.setState({list: this.props.model.deleteItemUsed(id)})}
    {console.log(this.state.list)}
 
   }

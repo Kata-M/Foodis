@@ -7,6 +7,7 @@ const DataModel = function () {
   let numberOfGuests = 4;
   let observers = [];
   let listOfFoodItems = [];
+  let shoppingList = [];
  
 
   var FoodItem = function(id,name, price, quantity,used,wasted,wastedPrecentage, times_bought) {
@@ -37,29 +38,34 @@ const DataModel = function () {
     return listOfFoodItems;
   };
 
-  let listofShoppingCart = [];
-  
+
   this.getShoppingList = function() {
     var i;
     for (i = 0; i < listOfFoodItems.length; i++) { 
       if(listOfFoodItems[i].times_bought > 3){
-        listofShoppingCart.push(listOfFoodItems[i])
+        shoppingList.push(listOfFoodItems[i])
       }
     }
-    return listofShoppingCart;
+    return shoppingList;
   }
 
   this.deleteItem = function(id){
     var i;
     var j;
-    /*for (i = 0; i < listOfFoodItems.length; i++) { 
-      if(listOfFoodItems[i].id == id){
-        console.log("this item will be removed: ")
-        console.log(listOfFoodItems[i].name)
-        console.log(listOfFoodItems[i].id)
-        listOfFoodItems.splice(i,1)
-      }
-    }*/
+    listOfFoodItems.splice(id,1)
+    this.updateFoodList()
+    for(j = 0; j < listOfFoodItems.length; j ++){
+        console.log(j + "  List of items :  " + listOfFoodItems[j].name)
+    }
+    return listOfFoodItems;
+  }
+  this.deleteItemUsed = function(id){
+    var i;
+    var j;
+    console.log("shopping before " +shoppingList)
+    shoppingList.push(listOfFoodItems[id])
+    notifyObservers();
+    console.log("shopping after " + shoppingList)
     listOfFoodItems.splice(id,1)
     this.updateFoodList()
     for(j = 0; j < listOfFoodItems.length; j ++){
