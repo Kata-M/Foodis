@@ -9,13 +9,14 @@ thead {
     text-align: center;
 }
 
-table#simple-board p {
-    float: right;
-    margin-left: 40px;
+p#amount {
+    position: relative;
+    left: 3em;
 }
 
 p#price {
-    width: 50px;
+    position: relative;
+    right:-60px;
 }
 
 td {
