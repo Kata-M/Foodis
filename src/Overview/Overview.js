@@ -108,7 +108,7 @@ class Overview extends Component {
                     <thead>       
                         <td className="tableCell">
                           <h4>Money wasted:</h4>
-							<h1 id="saldo"> - {totalWastedMoney + '\u20AC'}</h1>
+							<h1 id="saldo">  {-totalWastedMoney + '\u20AC'}</h1>
                           <h5>                       
                                  Recently bought items
                           </h5>  
