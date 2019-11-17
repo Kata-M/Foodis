@@ -50,7 +50,7 @@ class Overview extends Component {
   // this is called when component is removed from the DOM
   // good place to remove observer
   componentWillUnmount() {
-
+	  this.props.model.removeObserver(this);
   }
 
 
@@ -79,8 +79,10 @@ class Overview extends Component {
 
 
   render() {
+  	 let totalWastedMoney = this.props.model.getTotalWastedMoney();
+
      const rows = this.state.list.map((tab) =>
-   
+
      <tr key={tab.id}>
         <td className="tableRows"  id={tab}> 
                 {tab.name}   
@@ -105,6 +107,7 @@ class Overview extends Component {
           <table id="simple-board">
                     <thead>       
                         <td className="tableCell">
+							<h1> {totalWastedMoney + '\u20AC'}</h1>
                           <h2>                          
                                  Recently bought items
                           </h2>  

@@ -7,7 +7,8 @@ const DataModel = function () {
   let numberOfGuests = 4;
   let observers = [];
   let listOfFoodItems = [];
- 
+  let wastedTotal = 0;
+  // let total = 0;
 
   var FoodItem = function(id,name, price, quantity,used,wasted,wastedPrecentage, times_bought) {
   this.id = id
@@ -93,6 +94,19 @@ const DataModel = function () {
 
   this.getItemPrice = function(id) {
     return listOfFoodItems[id].price;
+  }
+
+  this.setWastedMoney = function(wastedMoney) {
+    wastedTotal = wastedTotal + wastedMoney;
+    notifyObservers();
+    console.log("set " + wastedTotal);
+  }
+
+  this.getTotalWastedMoney = function() {
+    if(wastedTotal == null) {
+      return 0;
+    }
+    return wastedTotal;
   }
 
   this.setNumberOfGuests = function (num) {

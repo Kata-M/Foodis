@@ -1,3 +1,9 @@
+div.backButton {
+    position:absolute;
+    top:0;
+    right:0;
+}
+
 div.DetailedView h1 {
     font-size: 30px;
     color: black;
